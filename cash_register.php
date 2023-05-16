@@ -8,6 +8,8 @@
 <body>
     <h1>Welcome to MacMedia</h1>
     <?php
+    ini_set('display_errors', 1);
+
         //Connect to database
         $db = new SQLite3("./dbMacMedia.db");
         $db->busyTimeout(5000);
@@ -31,7 +33,7 @@
     <p>
         <strong>Total amount for this order:</strong>
         <input type="text" id="totalOrderAmount" disabled>
-        <button type="button">Check out</button>
+        <button type="button" id="checkout" onclick="bestel()">Check out</button>
     </p>
  </body>
 
