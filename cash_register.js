@@ -118,7 +118,3 @@ function bestel() {
   
     xhr.send(JSON.stringify({ items: bestelling, total: totaal }));
   }
-  
-
-  
-  
