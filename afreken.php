@@ -15,22 +15,14 @@
 </head>
 
 <body>
-    <div class="container bg-success">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom bg-success">
-          <a href="./index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            <span class="fs-4">Simple header</span>
-          </a>
-    
-          <ul class="nav sticky-top nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-          </ul>
+<div class="container-fluid sticky-top bg-success">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none px-2 gx-5">
+                <img src="./assets/img/logo.jpg" alt="" height="32" width="32">
+                <span class="fs-4 text-warning px-2">McGLR</span>
+            </a>
         </header>
-      </div>
+    </div>
   <main>
     <div class="container d-flex flex-wrap justify-content-center items-center text-center pb-5 mb-5">
         <div class="row gy-3 justify-content-center">
