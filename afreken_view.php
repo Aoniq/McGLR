@@ -132,13 +132,16 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4" onclick="checkPin()">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="fw-bolder" >OK</h5>
-      </div>
+  <div class="col-md-4">
+  <div class="card">
+    <div class="card-body">
+      <form method="POST" action="afreken.php">
+        <input hidden id="pinInput" name="pin" type="number" placeholder="4-cijferige pincode" min="1000" max="9999" />
+        <button type="submit" class="btn btn-transparent mt-3">OK</button>
+      </form>
     </div>
   </div>
+</div>
   <div class="col-md-12">
     <div class="card">
       <div class="card-body">

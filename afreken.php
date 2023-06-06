@@ -28,12 +28,32 @@ $totaalPrijs = 0;
 while ($row = $result->fetch_assoc()) {
     $aantal = $row['aantal'];
     $prijs = $row['prijs'];
-    
+
     // Totaal aantal en totaal prijs bijwerken
     $totaalAantal += $aantal;
     $totaalPrijs += $prijs;
-
 }
 
-include_once('afreken_view.php')
+// Check of er een POST-verzoek is verzonden
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Controleer of de pincode en bestelnummer zijn verzonden
+    if (isset($_POST['pin']) && isset($_SESSION['bestelnummer'])) {
+        $pin = $_POST['pin'];
+        $bestelnummer = $_SESSION['bestelnummer'];
+
+        // Markeer de items als betaald in de database
+        $updateQuery = "UPDATE bestellingen SET betaald = 1 WHERE bestelnummer = ?";
+        $stmt = $connection->prepare($updateQuery);
+        $stmt->bind_param("s", $bestelnummer);
+        $stmt->execute();
+        $stmt->close();
+
+        // Stuur de gebruiker terug naar index.php of een andere gewenste bestemming
+        header("Location: index.php");
+        session_destroy();
+        exit();
+    }
+}
+
+include_once('afreken_view.php');
 ?>
