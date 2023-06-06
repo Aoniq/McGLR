@@ -26,11 +26,15 @@
     $query = "SELECT * FROM snacks";
     $result = $db->query($query);
     ?>
-    <div class="container sticky-top bg-white">
+    <div class="container-fluid sticky-top bg-success">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none px-2">
                 <img src="./assets/img/logo.jpg" alt="" height="32" width="32">
-                <span class="fs-4 text-warning">McGLR</span>
+                <span class="fs-4 text-warning px-2">McGLR</span>
+                <span class="text-black"><?= $row ?></span>
+                <div class="justify-content-end">
+                <span class="text-black"><?= $bestelNummer ?></span>
+                </div>
             </a>
         </header>
     </div>
@@ -58,24 +62,28 @@
             </div>
         </div>
     </main>
-    <footer class="fixed-bottom text-black bg-white border d-flex flex-wrap justify-content-center align-items-center py-3 mt-5 footer">
+    <footer class="fixed-bottom text-black bg-success d-flex flex-wrap justify-content-center align-items-center py-3 mt-5 footer">
         <div class="row">
             <div class="col-8">
                 <div class="mb-3 row">
-                    <label for="itemsAmount" class="col-sm-3 col-form-label">Items</label>
+                    <label for="itemsAmount" class="col-sm-2 col-form-label fs-4 text-white">ITEMS:</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control-plaintext" id="itemsAmount">
+                        <input type="text" class="form-control-plaintext w-50 fs-4 text-white" id="itemsAmount" value="<?= $totaalAantal ?>">
                     </div>
                 </div>
             </div>
             <div class="col-4 mb-3">
                 <div class="mb-3 row">
-                    <label for="itemsAmount" class="col-sm-3 col-form-label">Totaal</label>
-                    <div class="col-sm-9">
-                    <input type="text" id="totalOrderAmount" disabled class="form-control-plaintext w-50">
+                    <label for="itemsAmount" class="col-sm-5 col-form-label fs-4 text-white">TOTAAL:</label>
+                    <div class="col-sm-7">
+                    <input type="text" id="totalOrderAmount" disabled class="form-control-plaintext w-50 fs-4 text-white" value="€<?= $totaalPrijs ?>">
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
+        <a href="./afreken.php" class="btn btn-outline-warning w-100 h-100 fw-semibold text-white">AFREKENEN</a>
+
         </div>
     </footer>
     <!-- Bootstrap JavaScript Libraries -->

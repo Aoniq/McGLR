@@ -1,15 +1,23 @@
 <?php
-
 session_start();
 
-ini_set('display_errors', 1);
-include_once('config.php');
-
+// Controleer of het bestelnummer al is ingesteld in de sessie
 if (!isset($_SESSION['bestelnummer'])) {
     // Als het bestelnummer nog niet is ingesteld, genereer een nieuw bestelnummer
     $randomNumber = rand(1, 9999);
     $_SESSION['bestelnummer'] = $randomNumber;
 }
+
+ini_set('display_errors', 1);
+include_once('config.php');
+
+// Connect to database
+$db = new SQLite3("./dbMacMedia.db");
+$db->busyTimeout(5000);
+
+// Create query and execute query
+$query = "SELECT * FROM snacks";
+$result = $db->query($query);
 
 $bestelNummer = $_SESSION['bestelnummer'];
 
@@ -32,8 +40,7 @@ while ($row = $result->fetch_assoc()) {
     // Totaal aantal en totaal prijs bijwerken
     $totaalAantal += $aantal;
     $totaalPrijs += $prijs;
-
 }
 
-include_once('afreken_view.php')
+include_once('index_view.php');
 ?>
