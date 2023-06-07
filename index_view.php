@@ -84,7 +84,7 @@
                 <div class="mb-3 row">
                     <label for="itemsAmount" class="col-sm-5 col-form-label fs-4 fw-semibold text-white">TOTAAL:</label>
                     <div class="col-sm-7">
-                    <input type="text" id="totalOrderAmount" disabled class="form-control-plaintext w-50 fs-4 text-white" value="€<?= $totaalPrijs ?>">
+                    <input type="text" id="totalOrderAmount" disabled class="form-control-plaintext w-100 fs-4 text-white" value="€<?= $totaalPrijs ?>">
                     </div>
                 </div>
             </div>
